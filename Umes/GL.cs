@@ -24,6 +24,22 @@ namespace GraficadoraUMES.Umes
             this.g = g;
         }
 
+        public void Traslacion(float x, float y)
+        {
+            foreach (Renderer r in this.gl.Values)
+            {
+                if (r is Grafica)
+                {
+                    ((Grafica)r).Traslacion(new float[,]
+                    {
+                        { 1, 0, x},
+                        { 0, 1, y},
+                        { 0, 0, 1}
+                    });
+                }
+            }
+            draw();
+        }
         public void setup(PictureBox picture)
         {
             if (picture != null)

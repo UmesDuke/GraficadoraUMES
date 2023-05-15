@@ -13,6 +13,9 @@ namespace GraficadoraUMES
 {
     public partial class Form1 : Form
     {
+        private int angulo;
+        private int posX;
+        private int posY;
         private GL gL;
 
         public Form1()
@@ -25,24 +28,58 @@ namespace GraficadoraUMES
         {
             gL = new GL();
             gL.setup(this.pictureBox1);
+
+            comboBox1.Text = "Seleccionar Gráfica...";
+            comboBox1.Items.Add(Util.POLINOMIAL);
+            comboBox1.Items.Add(Util.EXPONENCIAL);
+            comboBox1.Items.Add(Util.SENOIDAL);
+
+            gL.addRenderer(Util.POLINOMIAL, new Polinomial(pictureBox1.Width, pictureBox1.Height));
+        }
+
+        private int GetValueTrack(TrackBar b)
+        {
+            int val = b.Value;
+            return Util.Map(val, b.Maximum / 2, b.Maximum, b.Minimum); 
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            int angulo = this.trackBarAngulo.Value;
+            angulo = this.GetValueTrack(trackBarAngulo);
 
+            label4.Text = "Ángulo: " + angulo + "%";
         }
 
         private void trackBarPosX_Scroll(object sender, EventArgs e)
         {
-            int posX = this.trackBarPosX.Value;
+            posX = this.GetValueTrack(trackBarPosX);
+            gL.Traslacion(posX, posY);
 
+            label5.Text = "Posición X: " + posX + "%";
+            textBox1.Text = posX.ToString();
         }
 
         private void trackBarPosY_Scroll(object sender, EventArgs e)
         {
-            int posY = this.trackBarPosY.Value;
+            posY = -this.GetValueTrack(trackBarPosY);
+            gL.Traslacion(posX, posY);
 
+            label6.Text = "Posición Y: " + (-posY) + "%";
+            textBox2.Text = (-posY).ToString();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = comboBox1.SelectedIndex;
+            if (index != -1)
+            {
+                gL.draw(comboBox1.Text);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gL.draw();
         }
     }
 }

@@ -9,16 +9,37 @@ namespace GraficadoraUMES.Umes
 {
     internal abstract class Grafica
     {
-        private float x;
-        private float y;
-        private float angulo;
+        protected Matriz m;
+        protected float margen;
+        protected float width;
+        protected float height;
 
-        public Grafica()
+        public Matriz M { get => m; set => m = value; }
+
+        public Grafica(float width, float height)
         {
+            this.m = new Matriz();
+            this.width = width;
+            this.height = height;
+
+            this.SetMargen(20);
         }
 
-        public float X { get => x; set => x = value; }
-        public float Y { get => y; set => y = value; }
-        public float Angulo { get => angulo; set => angulo = value; }
+        public void SetMargen(float margen)
+        {
+            m.SetPuntos(width/2, height/2, width/2, height/2);
+            this.margen = margen;
+        }
+
+        public void Traslacion(float[,]m)
+        {
+            this.m.Calcular(m);
+        }
+
+        public void Plano(Graphics g)
+        {
+            g.DrawLine(Pens.Gray, 0, height / 2, width, height / 2);
+            g.DrawLine(Pens.Gray, width / 2, 0, width / 2, height);
+        }
     }
 }
