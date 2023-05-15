@@ -12,7 +12,6 @@ namespace GraficadoraUMES.Umes
     {
         public Polinomial(float width, float height) : base(width, height)
         {
-            SetMargen(0);
         }
 
         public void draw(Graphics g)
@@ -20,9 +19,7 @@ namespace GraficadoraUMES.Umes
             g.Clear(Color.White);
 
             Plano(g);
-            g.DrawLine(Pens.Black, m.GetX1(), m.GetY1(), m.GetX2(), m.GetY2());
-
-            Console.WriteLine(m.GetX1()+" , "+ m.GetY1()+ " , "+ m.GetX2() +",- "+ m.GetY2());
+            g.DrawLine(Pens.Red, m.GetX1(), m.GetY1(), m.GetX2(), m.GetY2());
         }
 
         public void update()

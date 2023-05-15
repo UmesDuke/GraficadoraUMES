@@ -77,7 +77,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1045, 471);
+            this.panel1.Size = new System.Drawing.Size(1069, 523);
             this.panel1.TabIndex = 0;
             // 
             // panel5
@@ -89,7 +89,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(291, 110);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(754, 361);
+            this.panel5.Size = new System.Drawing.Size(778, 413);
             this.panel5.TabIndex = 2;
             // 
             // panel7
@@ -104,9 +104,9 @@
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(554, 0);
+            this.panel7.Location = new System.Drawing.Point(578, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 294);
+            this.panel7.Size = new System.Drawing.Size(200, 346);
             this.panel7.TabIndex = 2;
             // 
             // label11
@@ -198,16 +198,16 @@
             // 
             this.panel6.Controls.Add(this.button1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 294);
+            this.panel6.Location = new System.Drawing.Point(0, 346);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(754, 67);
+            this.panel6.Size = new System.Drawing.Size(778, 67);
             this.panel6.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(541, 17);
+            this.button1.Location = new System.Drawing.Point(565, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(188, 38);
             this.button1.TabIndex = 0;
@@ -225,7 +225,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(291, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(754, 110);
+            this.panel3.Size = new System.Drawing.Size(778, 110);
             this.panel3.TabIndex = 1;
             // 
             // comboBox1
@@ -267,7 +267,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.panel4.Location = new System.Drawing.Point(27, 87);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(702, 2);
+            this.panel4.Size = new System.Drawing.Size(726, 2);
             this.panel4.TabIndex = 0;
             // 
             // panel2
@@ -283,7 +283,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 471);
+            this.panel2.Size = new System.Drawing.Size(291, 523);
             this.panel2.TabIndex = 0;
             // 
             // label6
@@ -363,7 +363,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(554, 294);
+            this.pictureBox1.Size = new System.Drawing.Size(578, 346);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -371,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 471);
+            this.ClientSize = new System.Drawing.Size(1069, 523);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "GraficadoraUMES";

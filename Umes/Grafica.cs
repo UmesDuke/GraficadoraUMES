@@ -10,7 +10,6 @@ namespace GraficadoraUMES.Umes
     internal abstract class Grafica
     {
         protected Matriz m;
-        protected float margen;
         protected float width;
         protected float height;
 
@@ -22,16 +21,15 @@ namespace GraficadoraUMES.Umes
             this.width = width;
             this.height = height;
 
-            this.SetMargen(20);
-        }
-
-        public void SetMargen(float margen)
-        {
-            m.SetPuntos(width/2, height/2, width/2, height/2);
-            this.margen = margen;
+            m.SetPuntos(width / 2, height / 2, width / 2, height / 2);
         }
 
         public void Traslacion(float[,]m)
+        {
+            this.m.Calcular(m);
+        }
+
+        public void Rotar(float[,]m)
         {
             this.m.Calcular(m);
         }

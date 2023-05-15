@@ -54,11 +54,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Umes\Exponencial.cs" />
     <Compile Include="Umes\GL.cs" />
     <Compile Include="Umes\Grafica.cs" />
     <Compile Include="Umes\Matriz.cs" />
     <Compile Include="Umes\Polinomial.cs" />
     <Compile Include="Umes\Renderer.cs" />
+    <Compile Include="Umes\Senoidal.cs" />
     <Compile Include="Umes\Util.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -35,6 +35,8 @@ namespace GraficadoraUMES
             comboBox1.Items.Add(Util.SENOIDAL);
 
             gL.addRenderer(Util.POLINOMIAL, new Polinomial(pictureBox1.Width, pictureBox1.Height));
+            gL.addRenderer(Util.EXPONENCIAL, new Exponencial(pictureBox1.Width, pictureBox1.Height));
+            gL.addRenderer(Util.SENOIDAL, new Senoidal(pictureBox1.Width, pictureBox1.Height));
         }
 
         private int GetValueTrack(TrackBar b)
@@ -46,8 +48,10 @@ namespace GraficadoraUMES
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             angulo = this.GetValueTrack(trackBarAngulo);
+            gL.Rotar(angulo * 0.1);
 
             label4.Text = "Ángulo: " + angulo + "%";
+            textBox3.Text = (angulo * 0.1).ToString();
         }
 
         private void trackBarPosX_Scroll(object sender, EventArgs e)
