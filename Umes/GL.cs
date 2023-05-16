@@ -41,18 +41,13 @@ namespace GraficadoraUMES.Umes
             draw();
         }
 
-        public void Rotar(double a)
+        public void Rotar(float a)
         {
             foreach (Renderer r in this.gl.Values)
             {
                 if (r is Grafica)
                 {
-                    ((Grafica)r).Rotar(new float[,]
-                    {
-                        { (float) Math.Cos(a), (float) Math.Sin(a), 0},
-                        { -(float) Math.Sin(a), (float) Math.Cos(a), 0},
-                        { 0, 0, 1}
-                    });
+                    ((Grafica)r).Rotar(a);
                 }
             }
             draw();

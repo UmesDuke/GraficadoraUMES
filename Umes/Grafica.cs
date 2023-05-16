@@ -12,6 +12,7 @@ namespace GraficadoraUMES.Umes
         protected Matriz m;
         protected float width;
         protected float height;
+        protected float angulo;
 
         public Matriz M { get => m; set => m = value; }
 
@@ -29,9 +30,9 @@ namespace GraficadoraUMES.Umes
             this.m.Calcular(m);
         }
 
-        public void Rotar(float[,]m)
+        public void Rotar(float a)
         {
-            this.m.Calcular(m);
+            this.angulo = a;
         }
 
         public void Plano(Graphics g)

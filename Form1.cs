@@ -13,9 +13,9 @@ namespace GraficadoraUMES
 {
     public partial class Form1 : Form
     {
-        private int angulo;
-        private int posX;
-        private int posY;
+        private float angulo;
+        private float posX;
+        private float posY;
         private GL gL;
 
         public Form1()
@@ -39,19 +39,29 @@ namespace GraficadoraUMES
             gL.addRenderer(Util.SENOIDAL, new Senoidal(pictureBox1.Width, pictureBox1.Height));
         }
 
-        private int GetValueTrack(TrackBar b)
+        private float GetValueTrack(TrackBar b)
+        {
+            return this.GetValueTrack(b, true); 
+        }
+
+        private float GetValueTrack(TrackBar b, bool scale)
         {
             int val = b.Value;
-            return Util.Map(val, b.Maximum / 2, b.Maximum, b.Minimum); 
+            if (scale)
+            {
+                return val * 0.1f;
+            }
+            return val;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            angulo = this.GetValueTrack(trackBarAngulo);
-            gL.Rotar(angulo * 0.1);
+            angulo = this.GetValueTrack(trackBarAngulo, false);
 
-            label4.Text = "Ángulo: " + angulo + "%";
-            textBox3.Text = (angulo * 0.1).ToString();
+            gL.Rotar(angulo);
+
+            label4.Text = "Ángulo: " + angulo + "°";
+            textBox3.Text = (angulo).ToString();
         }
 
         private void trackBarPosX_Scroll(object sender, EventArgs e)
@@ -59,7 +69,7 @@ namespace GraficadoraUMES
             posX = this.GetValueTrack(trackBarPosX);
             gL.Traslacion(posX, posY);
 
-            label5.Text = "Posición X: " + posX + "%";
+            label5.Text = "Posición X: " + posX + "pts";
             textBox1.Text = posX.ToString();
         }
 
@@ -68,7 +78,7 @@ namespace GraficadoraUMES
             posY = -this.GetValueTrack(trackBarPosY);
             gL.Traslacion(posX, posY);
 
-            label6.Text = "Posición Y: " + (-posY) + "%";
+            label6.Text = "Posición Y: " + (-posY) + "pts";
             textBox2.Text = (-posY).ToString();
         }
 

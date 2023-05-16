@@ -19,22 +19,21 @@ namespace GraficadoraUMES.Umes
 
             Plano(g);
 
-            List<Point> points = new List<Point>();
-
-            Console.WriteLine(new Point((int)m.GetX1(), (int)m.GetY2()));
+            g.RotateTransform(angulo);
+            List<PointF> points = new List<PointF>();
 
             for (int x = -200; x < 200; x++)
             {
-                Point p = new Point((int)m.GetX2() + (10*x), (int)(m.GetY2() - (50*Math.Sin(x))));
+                PointF p = new PointF(m.GetX2() + (10*x), (float)(m.GetY2() - (50*Math.Sin(x))));
                 points.Add(p);
-
-                Console.WriteLine(p.ToString());
             }
 
             if (points.Count > 1)
             {
                 g.DrawCurve(Pens.Blue, points.ToArray());
             }
+
+            g.RotateTransform(-angulo);
         }
 
         public void update()

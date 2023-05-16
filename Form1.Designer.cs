@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -55,9 +56,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.trackBarAngulo = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAngulo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(778, 413);
             this.panel5.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(578, 346);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // panel7
             // 
@@ -292,19 +302,19 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(31, 252);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 20);
+            this.label6.Size = new System.Drawing.Size(130, 20);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Posición Y: 0%";
+            this.label6.Text = "Posición Y: 0pts";
             // 
             // trackBarPosY
             // 
             this.trackBarPosY.Location = new System.Drawing.Point(35, 275);
+            this.trackBarPosY.Minimum = -10;
             this.trackBarPosY.Name = "trackBarPosY";
             this.trackBarPosY.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.trackBarPosY.Size = new System.Drawing.Size(199, 56);
             this.trackBarPosY.TabIndex = 5;
             this.trackBarPosY.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarPosY.Value = 5;
             this.trackBarPosY.Scroll += new System.EventHandler(this.trackBarPosY_Scroll);
             // 
             // label5
@@ -313,18 +323,18 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(31, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 20);
+            this.label5.Size = new System.Drawing.Size(131, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Posición X: 0%";
+            this.label5.Text = "Posición X: 0pts";
             // 
             // trackBarPosX
             // 
             this.trackBarPosX.Location = new System.Drawing.Point(35, 180);
+            this.trackBarPosX.Minimum = -10;
             this.trackBarPosX.Name = "trackBarPosX";
             this.trackBarPosX.Size = new System.Drawing.Size(199, 56);
             this.trackBarPosX.TabIndex = 3;
             this.trackBarPosX.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarPosX.Value = 5;
             this.trackBarPosX.Scroll += new System.EventHandler(this.trackBarPosX_Scroll);
             // 
             // label4
@@ -333,18 +343,19 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(32, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 20);
+            this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Ángulo: 0%";
+            this.label4.Text = "Ángulo: 0°";
             // 
             // trackBarAngulo
             // 
             this.trackBarAngulo.Location = new System.Drawing.Point(35, 87);
+            this.trackBarAngulo.Maximum = 180;
+            this.trackBarAngulo.Minimum = -180;
             this.trackBarAngulo.Name = "trackBarAngulo";
             this.trackBarAngulo.Size = new System.Drawing.Size(199, 56);
             this.trackBarAngulo.TabIndex = 1;
             this.trackBarAngulo.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarAngulo.Value = 5;
             this.trackBarAngulo.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label3
@@ -357,16 +368,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Propiedades:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(578, 346);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,6 +378,7 @@
             this.Text = "GraficadoraUMES";
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -387,7 +389,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAngulo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
