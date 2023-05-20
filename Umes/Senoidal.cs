@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,18 @@ namespace GraficadoraUMES.Umes
 
             Plano(g);
 
+            Matrix m = new Matrix();
+            m.Shear(xRecorte, yRecorte);
+            g.MultiplyTransform(m);
+
             g.RotateTransform(angulo);
+            g.TranslateTransform(xPos, yPos);
+            
             List<PointF> points = new List<PointF>();
 
             for (int x = -200; x < 200; x++)
             {
-                PointF p = new PointF(m.GetX2() + (10*x), (float)(m.GetY2() - (50*Math.Sin(x))));
+                PointF p = new PointF(OffSetX() + (10 * x), (float)(OffSetY() - (Val[1] * Math.Sin(x * Val[0]))));
                 points.Add(p);
             }
 
@@ -33,7 +40,7 @@ namespace GraficadoraUMES.Umes
                 g.DrawCurve(Pens.Blue, points.ToArray());
             }
 
-            g.RotateTransform(-angulo);
+            g.ResetTransform();
         }
 
         public void update()

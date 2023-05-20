@@ -10,25 +10,45 @@ namespace GraficadoraUMES.Umes
 {
     internal class Polinomial : Grafica, Renderer
     {
+        
+
         public Polinomial(float width, float height) : base(width, height)
         {
         }
 
+        private float fun(float x)
+        {
+            float y = 0;
+            List<int> v = Val;
+
+            for (int i = 0; i < v.Count; i++)
+            {
+                y += (v[i] * (float)Math.Pow(x, i));
+            }
+
+            return y;
+        }
+
         public void draw(Graphics g)
         {
+
             g.Clear(Color.White);
 
             Plano(g);
 
+            Matrix m = new Matrix();
+            m.Shear(xRecorte, yRecorte);
+            g.MultiplyTransform(m);
+
+            g.TranslateTransform(xPos, yPos);
             g.RotateTransform(angulo);
 
             List<PointF> points = new List<PointF>();
-            for (int x = -200; x < 200; x++)
+            for (int x = -50; x < 50; x++)
             {
-                float px = m.GetX2() + (5 * x), 
-                      py = m.GetY2() - (float)(Math.Pow(x, 2) + Math.Pow(x, 2) + 2);
-
-                PointF p = new PointF(px, py); 
+                float px = OffSetX() + (x * 20),
+                      py = OffSetY() - fun(x);
+                PointF p = new PointF(px, py);
                 points.Add(p);
             }
 
@@ -37,7 +57,7 @@ namespace GraficadoraUMES.Umes
                 g.DrawCurve(Pens.Blue, points.ToArray());
             }
 
-            g.RotateTransform(-angulo);
+            g.ResetTransform();
         }
 
         public void update()

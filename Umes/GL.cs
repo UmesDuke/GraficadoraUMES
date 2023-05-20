@@ -24,18 +24,32 @@ namespace GraficadoraUMES.Umes
             this.g = g;
         }
 
+        public void Reset()
+        {
+            Traslacion(0, 0);
+            Rotar(0);
+            Sizallar(0, 0);
+        }
+
         public void Traslacion(float x, float y)
         {
             foreach (Renderer r in this.gl.Values)
             {
                 if (r is Grafica)
                 {
-                    ((Grafica)r).Traslacion(new float[,]
-                    {
-                        { 1, 0, x},
-                        { 0, 1, y},
-                        { 0, 0, 1}
-                    });
+                    ((Grafica)r).Traslacion(x, y);
+                }
+            }
+            draw();
+        }
+
+        public void Sizallar(float x, float y)
+        {
+            foreach (Renderer r in this.gl.Values)
+            {
+                if (r is Grafica)
+                {
+                    ((Grafica)r).Cizallamineto(x, y);
                 }
             }
             draw();
@@ -66,6 +80,16 @@ namespace GraficadoraUMES.Umes
             {
                 this.gl.Add(name, renderer);
             }
+        }
+
+        public Grafica GetG(string key)
+        {
+            Renderer r = gl[key];
+            if (r is Grafica)
+            {
+                return (Grafica)r;
+            }
+            return null;
         }
 
         public void draw(String key)

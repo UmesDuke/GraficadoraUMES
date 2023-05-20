@@ -49,6 +49,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.trackBarSizallaminetoY = new System.Windows.Forms.TrackBar();
+            this.label13 = new System.Windows.Forms.Label();
+            this.trackBarSizallaminetoX = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.trackBarPosY = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,6 +67,8 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSizallaminetoY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSizallaminetoX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAngulo)).BeginInit();
@@ -283,6 +289,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.trackBarSizallaminetoY);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.trackBarSizallaminetoX);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.trackBarPosY);
             this.panel2.Controls.Add(this.label5);
@@ -295,6 +305,48 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(291, 523);
             this.panel2.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(31, 433);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(166, 20);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Sizallamineto Y: 0pts";
+            // 
+            // trackBarSizallaminetoY
+            // 
+            this.trackBarSizallaminetoY.Location = new System.Drawing.Point(35, 456);
+            this.trackBarSizallaminetoY.Minimum = -10;
+            this.trackBarSizallaminetoY.Name = "trackBarSizallaminetoY";
+            this.trackBarSizallaminetoY.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.trackBarSizallaminetoY.Size = new System.Drawing.Size(199, 56);
+            this.trackBarSizallaminetoY.TabIndex = 9;
+            this.trackBarSizallaminetoY.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarSizallaminetoY.Scroll += new System.EventHandler(this.trackBarSizallaminetoY_Scroll);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(31, 350);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(167, 20);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Sizallamineto X: 0pts";
+            // 
+            // trackBarSizallaminetoX
+            // 
+            this.trackBarSizallaminetoX.Location = new System.Drawing.Point(35, 373);
+            this.trackBarSizallaminetoX.Minimum = -10;
+            this.trackBarSizallaminetoX.Name = "trackBarSizallaminetoX";
+            this.trackBarSizallaminetoX.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.trackBarSizallaminetoX.Size = new System.Drawing.Size(199, 56);
+            this.trackBarSizallaminetoX.TabIndex = 7;
+            this.trackBarSizallaminetoX.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarSizallaminetoX.Scroll += new System.EventHandler(this.trackBarSizallaminetoX_Scroll);
             // 
             // label6
             // 
@@ -309,7 +361,8 @@
             // trackBarPosY
             // 
             this.trackBarPosY.Location = new System.Drawing.Point(35, 275);
-            this.trackBarPosY.Minimum = -10;
+            this.trackBarPosY.Maximum = 100;
+            this.trackBarPosY.Minimum = -100;
             this.trackBarPosY.Name = "trackBarPosY";
             this.trackBarPosY.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.trackBarPosY.Size = new System.Drawing.Size(199, 56);
@@ -330,7 +383,8 @@
             // trackBarPosX
             // 
             this.trackBarPosX.Location = new System.Drawing.Point(35, 180);
-            this.trackBarPosX.Minimum = -10;
+            this.trackBarPosX.Maximum = 100;
+            this.trackBarPosX.Minimum = -100;
             this.trackBarPosX.Name = "trackBarPosX";
             this.trackBarPosX.Size = new System.Drawing.Size(199, 56);
             this.trackBarPosX.TabIndex = 3;
@@ -386,6 +440,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSizallaminetoY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSizallaminetoX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAngulo)).EndInit();
@@ -423,6 +479,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TrackBar trackBarSizallaminetoY;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TrackBar trackBarSizallaminetoX;
     }
 }
 
