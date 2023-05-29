@@ -12,9 +12,9 @@ namespace GraficadoraUMES.Umes.Forms
 {
     public partial class EcuacionPolinomica : Form
     {
-        List<int> coeficionetes = new List<int>();
+        List<float> coeficionetes = new List<float>();
 
-        public List<int> Coeficionetes { get => coeficionetes; set => coeficionetes = value; }
+        public List<float> Coeficionetes { get => coeficionetes; set => coeficionetes = value; }
 
         public EcuacionPolinomica()
         {
@@ -39,6 +39,7 @@ namespace GraficadoraUMES.Umes.Forms
 
             Console.WriteLine(coeficionetes.Count);
             label2.Text = "Expreción:   " + b.ToString();
+            label1.Text = "Agregar: x^" + coeficionetes.Count.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace GraficadoraUMES.Umes.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            coeficionetes.Add(Convert.ToInt32(textBox1.Text));
+            coeficionetes.Add((float)Convert.ToDecimal(textBox1.Text));
             MostarExp();
 
             textBox1.Text = "";

@@ -14,6 +14,18 @@ namespace GraficadoraUMES.Umes
         {
         }
 
+        private float func(float x)
+        {
+            float coe = Val[0];
+            float res = (float)Math.Pow(Math.Abs(coe), x);
+
+            if (coe < 0)
+            {
+                return -res;
+            }
+            return res;
+        }
+
         public void draw(Graphics g)
         {
            g.Clear(Color.White);
@@ -29,9 +41,9 @@ namespace GraficadoraUMES.Umes
             
             List<PointF> points = new List<PointF>();
 
-            for (int x = -200; x < 20; x++)
+            for (int x = -200; x < 10; x++)
             {
-                PointF p = new PointF(OffSetX() + (5 * x), (float)(OffSetY() -Math.Pow(2, x)));
+                PointF p = new PointF(OffSetX() + (x*5), OffSetY() -  func(x));
                 points.Add(p);
             }
 

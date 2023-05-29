@@ -10,21 +10,20 @@ using System.Windows.Forms;
 
 namespace GraficadoraUMES.Umes.Forms
 {
-    public partial class EcuacionSenoidal : Form
+    public partial class EcuacionExponencial : Form
     {
         List<float> coeficionetes = new List<float>();
 
         public List<float> Coeficionetes { get => coeficionetes; set => coeficionetes = value; }
-
-        public EcuacionSenoidal()
+        public EcuacionExponencial()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            coeficionetes.Clear();
             coeficionetes.Add((float)Convert.ToDecimal(textBox1.Text));
-            coeficionetes.Add((float)Convert.ToDecimal(textBox2.Text));
             Close();
         }
     }

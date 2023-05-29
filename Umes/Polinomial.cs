@@ -19,7 +19,7 @@ namespace GraficadoraUMES.Umes
         private float fun(float x)
         {
             float y = 0;
-            List<int> v = Val;
+            List<float> v = Val;
 
             for (int i = 0; i < v.Count; i++)
             {

@@ -129,6 +129,12 @@ namespace GraficadoraUMES
 
                         gL.GetG(Util.SENOIDAL).Val = es.Coeficionetes;
                         break;
+                    case "Exponencial":
+                        EcuacionExponencial ex = new EcuacionExponencial();
+                        ex.ShowDialog();
+
+                        gL.GetG(Util.EXPONENCIAL).Val = ex.Coeficionetes;
+                        break;
                     default:
                         break;
                 }

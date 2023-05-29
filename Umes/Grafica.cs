@@ -19,8 +19,8 @@ namespace GraficadoraUMES.Umes
         protected float yRecorte;
         protected float angulo;
 
-        private List<int> val = new List<int>();
-        public List<int> Val { get => val; set => val = value; }
+        private List<float> val = new List<float>();
+        public List<float> Val { get => val; set => val = value; }
 
         public Grafica(float width, float height)
         {
